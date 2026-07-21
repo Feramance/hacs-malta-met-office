@@ -216,6 +216,10 @@ def parse_current_report(payload: dict[str, Any]) -> dict[str, Any]:
     if wind_bearing is None:
         wind_bearing = parse_wind_bearing_from_direction(data.get("wind_direction"))
 
+    wind_direction = data.get("wind_direction")
+    if wind_direction is not None:
+        wind_direction = str(wind_direction).strip() or None
+
     return {
         "condition": map_condition(native_condition),
         "native_condition": native_condition,
@@ -223,11 +227,43 @@ def parse_current_report(payload: dict[str, Any]) -> dict[str, Any]:
         "apparent_temperature": _to_float(data.get("feels_like")),
         "humidity": _to_int(data.get("relative_humidity")),
         "pressure": _to_float(data.get("atmospheric_pressure")),
+        "sea_level_pressure": _to_float(data.get("sea_level_pressure")),
         "wind_speed": _to_float(data.get("wind_speed")),
         "wind_bearing": wind_bearing,
+        "wind_direction": wind_direction,
         "visibility": _to_float(data.get("visibility")),
         "dew_point": _to_float(data.get("dew_point")),
+        "clouds": data.get("clouds"),
+        "uv_index": _to_float(data.get("uv_index")),
+        "rainfall": _to_float(data.get("rainfall")),
+        "sea_temperature": _to_float(data.get("sea_temperature")),
+        "min_air_temperature": _to_float(data.get("min_air_temperature")),
+        "max_shade_temperature": _to_float(data.get("max_shade_temperature")),
+        "hours_of_bright_sunshine": _to_float(data.get("hours_of_bright_sunshine")),
+        "sunrise": data.get("sunrise"),
+        "sunset": data.get("sunset"),
+        "moon_phase": data.get("moon_phase"),
         "last_updated": report.get("last_updated"),
+    }
+
+
+def parse_rainfall_summary(payload: dict[str, Any]) -> dict[str, float | None]:
+    """Parse rainfall summary averages from the current-report payload."""
+    rainfall = payload.get("rainfall") or {}
+    data = rainfall.get("data") or {}
+    if not isinstance(data, dict):
+        return {"rainfall_24h": None, "rainfall_season_total": None}
+
+    day_block = data.get("24hour") or {}
+    total_block = data.get("total") or {}
+
+    return {
+        "rainfall_24h": _to_float(
+            day_block.get("average") if isinstance(day_block, dict) else None
+        ),
+        "rainfall_season_total": _to_float(
+            total_block.get("average") if isinstance(total_block, dict) else None
+        ),
     }
 
 
@@ -306,11 +342,17 @@ def parse_weather_payloads(
 ) -> MaltaMetWeatherData:
     """Combine API payloads into MaltaMetWeatherData."""
     current = parse_current_report(current_payload)
+    rainfall = parse_rainfall_summary(current_payload)
     forecasts = parse_forecast(forecast_payload)
     warnings = parse_warnings(warnings_payload) if warnings_payload is not None else []
 
     if current["temperature"] is None and not forecasts:
         raise MaltaMetOfficeParseError("No usable weather data found")
+
+    active_warning = None
+    if warnings:
+        first = warnings[0]
+        active_warning = first.label or first.message
 
     return MaltaMetWeatherData(
         condition=current["condition"],
@@ -319,11 +361,27 @@ def parse_weather_payloads(
         apparent_temperature=current["apparent_temperature"],
         humidity=current["humidity"],
         pressure=current["pressure"],
+        sea_level_pressure=current["sea_level_pressure"],
         wind_speed=current["wind_speed"],
         wind_bearing=current["wind_bearing"],
+        wind_direction=current["wind_direction"],
         visibility=current["visibility"],
         dew_point=current["dew_point"],
+        clouds=current["clouds"],
+        uv_index=current["uv_index"],
+        rainfall=current["rainfall"],
+        sea_temperature=current["sea_temperature"],
+        min_air_temperature=current["min_air_temperature"],
+        max_shade_temperature=current["max_shade_temperature"],
+        hours_of_bright_sunshine=current["hours_of_bright_sunshine"],
+        sunrise=current["sunrise"],
+        sunset=current["sunset"],
+        moon_phase=current["moon_phase"],
         last_updated=current["last_updated"],
+        rainfall_24h=rainfall["rainfall_24h"],
+        rainfall_season_total=rainfall["rainfall_season_total"],
+        warning_count=len(warnings),
+        active_warning=active_warning,
         forecasts=forecasts,
         warnings=warnings,
         raw={

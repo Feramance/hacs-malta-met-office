@@ -4,10 +4,10 @@
   "codeowners": [],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/YOUR_USERNAME/hacs-malta-met-office",
+  "documentation": "https://github.com/Feramance/hacs-malta-met-office",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/YOUR_USERNAME/hacs-malta-met-office/issues",
+  "issue_tracker": "https://github.com/Feramance/hacs-malta-met-office/issues",
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.2.0"
 }
