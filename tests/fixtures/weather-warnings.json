@@ -1,0 +1,40 @@
+[
+  {
+    "id": 134,
+    "is_active": "2026-07-21 11:19:08",
+    "publish_time": "2026-07-21T09:15:00.000000Z",
+    "label": "Heat Advisory",
+    "label_mt": "Twissija ta' S\u0127ana",
+    "level": "be_aware_yellow",
+    "warning": "The maximum temperature is expected to be between 33\u00b0C and 35\u00b0C on Thursday 23rd and Friday 24th July.",
+    "warning_mt": "L-og\u0127la temperatura mistennija li tkun bejn it-33\u00b0C u l-35\u00b0C nhar il-\u0126amis 23 ta' Lulju u l-\u0120img\u0127a 24 ta' Lulju.",
+    "from": "2026-07-23T07:00:00.000000Z",
+    "until": "2026-07-24T16:00:00.000000Z",
+    "user_id": 7,
+    "created_at": "2026-07-21T09:19:08.000000Z",
+    "updated_at": "2026-07-21T09:19:08.000000Z",
+    "from_formatted": "23.7.2026 / 09:00",
+    "until_formatted": "24.7.2026 / 18:00",
+    "updated_at_formatted": "21st Jul 2026, 11:19",
+    "updated_at_formatted_mt": "21\u00ba Lul 2026, 11:19"
+  },
+  {
+    "id": 133,
+    "is_active": "2026-07-21 11:03:30",
+    "publish_time": "2026-07-21T09:00:00.000000Z",
+    "label": "Heat Advisory",
+    "label_mt": "Twissija ta' S\u0127ana",
+    "level": "take_action_red",
+    "warning": "The maximum temperature is expected to be 42\u00b0C on Tuesday 21st and Wednesday 22nd July.",
+    "warning_mt": "L-og\u0127la temperatura mistennija li tkun 42\u00b0C it-Tlieta 21 ta' Lulju u l-Erbg\u0127a 22 ta' Lulju.",
+    "from": "2026-07-21T09:00:00.000000Z",
+    "until": "2026-07-22T16:00:00.000000Z",
+    "user_id": 7,
+    "created_at": "2026-07-21T09:03:06.000000Z",
+    "updated_at": "2026-07-21T09:03:30.000000Z",
+    "from_formatted": "21.7.2026 / 11:00",
+    "until_formatted": "22.7.2026 / 18:00",
+    "updated_at_formatted": "21st Jul 2026, 11:03",
+    "updated_at_formatted_mt": "21\u00ba Lul 2026, 11:03"
+  }
+]

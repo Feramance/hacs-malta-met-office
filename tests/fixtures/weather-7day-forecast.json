@@ -1,0 +1,336 @@
+{
+  "id": 578,
+  "publish_time": "2026-07-21T09:00:00.000000Z",
+  "days": [
+    {
+      "low": "28",
+      "date": {
+        "date_default": "2026-07-21",
+        "date_day": "Tuesday",
+        "date_formatted": "21 Jul"
+      },
+      "high": "42",
+      "uv_index": "10",
+      "condition": {
+        "label": "HOT & SUNNY",
+        "label_mt": "XEMXI U S\u0126UN",
+        "icon": "https://content.maltametoffice.com/weather-conditions/BJFfxnB3s7tl8EfCkKONG7n7ucKTYYD0c6Z7zcjF.png"
+      },
+      "feels_like": "43",
+      "wind_force": "F2-3",
+      "wind_direction": "NNW",
+      "daytime_forecast": {
+        "night": {
+          "condition": {
+            "label": "FINE",
+            "label_mt": "SABI\u0126",
+            "icon": "https://content.maltametoffice.com/weather-conditions/DnSfMv178uuFERS8Yh1SpJcRVoFVKuo14mbqQ9EG.png"
+          },
+          "wind_force": "F2-3",
+          "wind_direction": "WSW"
+        },
+        "morning": {
+          "condition": {
+            "label": "HOT & SUNNY",
+            "label_mt": "XEMXI U S\u0126UN",
+            "icon": "https://content.maltametoffice.com/weather-conditions/BJFfxnB3s7tl8EfCkKONG7n7ucKTYYD0c6Z7zcjF.png"
+          },
+          "wind_force": "F2-3",
+          "wind_direction": "NNW"
+        },
+        "afternoon": {
+          "condition": {
+            "label": "HOT & SUNNY",
+            "label_mt": "XEMXI U S\u0126UN",
+            "icon": "https://content.maltametoffice.com/weather-conditions/BJFfxnB3s7tl8EfCkKONG7n7ucKTYYD0c6Z7zcjF.png"
+          },
+          "wind_force": "F2-3",
+          "wind_direction": "VAR"
+        }
+      },
+      "wind_force_change": "F2-3",
+      "wind_direction_change": "WSW",
+      "date_mt": {
+        "date_default": "2026-07-21",
+        "date_day": "It-Tlieta",
+        "date_formatted": "21 Lul"
+      }
+    },
+    {
+      "low": "28",
+      "date": {
+        "date_default": "2026-07-22",
+        "date_day": "Wednesday",
+        "date_formatted": "22 Jul"
+      },
+      "high": "42",
+      "uv_index": "10",
+      "condition": {
+        "label": "HOT & SUNNY",
+        "label_mt": "XEMXI U S\u0126UN",
+        "icon": "https://content.maltametoffice.com/weather-conditions/BJFfxnB3s7tl8EfCkKONG7n7ucKTYYD0c6Z7zcjF.png"
+      },
+      "feels_like": "42",
+      "wind_force": "F3-4",
+      "wind_direction": "W",
+      "daytime_forecast": {
+        "night": {
+          "condition": {
+            "label": "FINE",
+            "label_mt": "SABI\u0126",
+            "icon": "https://content.maltametoffice.com/weather-conditions/DnSfMv178uuFERS8Yh1SpJcRVoFVKuo14mbqQ9EG.png"
+          },
+          "wind_force": "F3",
+          "wind_direction": "NW"
+        },
+        "morning": {
+          "condition": {
+            "label": "HOT & SUNNY",
+            "label_mt": "XEMXI U S\u0126UN",
+            "icon": "https://content.maltametoffice.com/weather-conditions/BJFfxnB3s7tl8EfCkKONG7n7ucKTYYD0c6Z7zcjF.png"
+          },
+          "wind_force": "F3-4",
+          "wind_direction": "W"
+        },
+        "afternoon": {
+          "condition": {
+            "label": "HOT & SUNNY",
+            "label_mt": "XEMXI U S\u0126UN",
+            "icon": "https://content.maltametoffice.com/weather-conditions/BJFfxnB3s7tl8EfCkKONG7n7ucKTYYD0c6Z7zcjF.png"
+          },
+          "wind_force": "F4-5",
+          "wind_direction": "WNW"
+        }
+      },
+      "wind_force_change": "F4-5",
+      "wind_direction_change": "WNW",
+      "date_mt": {
+        "date_default": "2026-07-22",
+        "date_day": "L-Erbg\u0127a",
+        "date_formatted": "22 Lul"
+      }
+    },
+    {
+      "low": "26",
+      "date": {
+        "date_default": "2026-07-23",
+        "date_day": "Thursday",
+        "date_formatted": "23 Jul"
+      },
+      "high": "33",
+      "uv_index": "9",
+      "condition": {
+        "label": "HOT & SUNNY",
+        "label_mt": "XEMXI U S\u0126UN",
+        "icon": "https://content.maltametoffice.com/weather-conditions/i5hJxEAV5zC0N1ePCteQeGewcFNqorg7YnegMzeT.png"
+      },
+      "feels_like": "37",
+      "wind_force": "F2-3",
+      "wind_direction": "ENE",
+      "daytime_forecast": {
+        "night": {
+          "condition": {
+            "label": "FINE",
+            "label_mt": "SABI\u0126",
+            "icon": "https://content.maltametoffice.com/weather-conditions/DnSfMv178uuFERS8Yh1SpJcRVoFVKuo14mbqQ9EG.png"
+          },
+          "wind_force": "F3-4",
+          "wind_direction": "WNW"
+        },
+        "morning": {
+          "condition": {
+            "label": "HOT & SUNNY",
+            "label_mt": "XEMXI U S\u0126UN",
+            "icon": "https://content.maltametoffice.com/weather-conditions/i5hJxEAV5zC0N1ePCteQeGewcFNqorg7YnegMzeT.png"
+          },
+          "wind_force": "F2-3",
+          "wind_direction": "ENE"
+        },
+        "afternoon": {
+          "condition": {
+            "label": "HOT & SUNNY",
+            "label_mt": "XEMXI U S\u0126UN",
+            "icon": "https://content.maltametoffice.com/weather-conditions/i5hJxEAV5zC0N1ePCteQeGewcFNqorg7YnegMzeT.png"
+          },
+          "wind_force": "F2-3",
+          "wind_direction": "SW"
+        }
+      },
+      "wind_force_change": "F3-4",
+      "wind_direction_change": "WNW",
+      "date_mt": {
+        "date_default": "2026-07-23",
+        "date_day": "Il-\u0126amis",
+        "date_formatted": "23 Lul"
+      }
+    },
+    {
+      "low": "26",
+      "date": {
+        "date_default": "2026-07-24",
+        "date_day": "Friday",
+        "date_formatted": "24 Jul"
+      },
+      "high": "35",
+      "uv_index": "9",
+      "condition": {
+        "label": "HOT & SUNNY",
+        "label_mt": "XEMXI U S\u0126UN",
+        "icon": "https://content.maltametoffice.com/weather-conditions/i5hJxEAV5zC0N1ePCteQeGewcFNqorg7YnegMzeT.png"
+      },
+      "feels_like": "36",
+      "wind_force": "F4-5",
+      "wind_direction": "WNW",
+      "daytime_forecast": {
+        "night": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        },
+        "morning": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        },
+        "afternoon": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        }
+      },
+      "wind_force_change": "F2-3",
+      "wind_direction_change": "VAR",
+      "date_mt": {
+        "date_default": "2026-07-24",
+        "date_day": "Il-\u0120img\u0127a",
+        "date_formatted": "24 Lul"
+      }
+    },
+    {
+      "low": "26",
+      "date": {
+        "date_default": "2026-07-25",
+        "date_day": "Saturday",
+        "date_formatted": "25 Jul"
+      },
+      "high": "30",
+      "uv_index": "10",
+      "condition": {
+        "label": "PARTLY CLOUDY",
+        "label_mt": "FTIT IMSA\u0126\u0126AB",
+        "icon": "https://content.maltametoffice.com/weather-conditions/5ChKLAS6CHxbNpWTWJ7RKLgciy5kM9GClEgQOKt5.png"
+      },
+      "feels_like": "34",
+      "wind_force": "F2-3",
+      "wind_direction": "SE",
+      "daytime_forecast": {
+        "night": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        },
+        "morning": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        },
+        "afternoon": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        }
+      },
+      "wind_force_change": "F3-4",
+      "wind_direction_change": "S",
+      "date_mt": {
+        "date_default": "2026-07-25",
+        "date_day": "Is-Sibt",
+        "date_formatted": "25 Lul"
+      }
+    },
+    {
+      "low": "26",
+      "date": {
+        "date_default": "2026-07-26",
+        "date_day": "Sunday",
+        "date_formatted": "26 Jul"
+      },
+      "high": "30",
+      "uv_index": "10",
+      "condition": {
+        "label": "MAINLY SUNNY",
+        "label_mt": "IL-BI\u010a\u010aA L-KBIRA XEMXI",
+        "icon": "https://content.maltametoffice.com/weather-conditions/c5pUNDIfzfaFGZTZlkrJlJLqwIOppE0xeRe1hO1C.png"
+      },
+      "feels_like": "33",
+      "wind_force": "F4-5",
+      "wind_direction": "S",
+      "daytime_forecast": {
+        "night": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        },
+        "morning": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        },
+        "afternoon": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        }
+      },
+      "wind_force_change": null,
+      "wind_direction_change": "N/A",
+      "date_mt": {
+        "date_default": "2026-07-26",
+        "date_day": "Il-\u0126add",
+        "date_formatted": "26 Lul"
+      }
+    },
+    {
+      "low": "26",
+      "date": {
+        "date_default": "2026-07-27",
+        "date_day": "Monday",
+        "date_formatted": "27 Jul"
+      },
+      "high": "33",
+      "uv_index": "10",
+      "condition": {
+        "label": "HOT & SUNNY",
+        "label_mt": "XEMXI U S\u0126UN",
+        "icon": "https://content.maltametoffice.com/weather-conditions/i5hJxEAV5zC0N1ePCteQeGewcFNqorg7YnegMzeT.png"
+      },
+      "feels_like": "36",
+      "wind_force": "F2-3",
+      "wind_direction": "SW",
+      "daytime_forecast": {
+        "night": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        },
+        "morning": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        },
+        "afternoon": {
+          "condition": null,
+          "wind_force": null,
+          "wind_direction": null
+        }
+      },
+      "wind_force_change": "F4",
+      "wind_direction_change": "WNW",
+      "date_mt": {
+        "date_default": "2026-07-27",
+        "date_day": "It-Tnejn",
+        "date_formatted": "27 Lul"
+      }
+    }
+  ]
+}

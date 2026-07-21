@@ -1,0 +1,88 @@
+{
+  "current_report": {
+    "data": {
+      "clouds": "CAVOK",
+      "sunset": "20:15",
+      "sunrise": "06:01",
+      "rainfall": "0",
+      "uv_index": "7",
+      "condition": {
+        "label": "FINE",
+        "label_mt": "SABI\u0126",
+        "icon": "https://content.maltametoffice.com/weather-conditions/xqCB2ZiAhcLtTfeSxFLG3rEW8jq1gHEjZKdwdhug.png"
+      },
+      "dew_point": "15",
+      "feels_like": "36",
+      "moon_phase": "Waxing Crescent",
+      "visibility": "10+",
+      "wind_speed": "8",
+      "metar_enabled": "1",
+      "wind_direction": "SW",
+      "sea_temperature": "29",
+      "metar_recurrence": "hourly",
+      "relative_humidity": "29",
+      "sea_level_pressure": "1020",
+      "wind_direction_deg": "220",
+      "current_temperature": "36",
+      "min_air_temperature": "28.1",
+      "atmospheric_pressure": "1014",
+      "max_shade_temperature": "42.7",
+      "hours_of_bright_sunshine": "17"
+    },
+    "last_updated": "21st Jul 2026 18:48",
+    "last_updated_mt": "21 ta` Lul 2026 18:48"
+  },
+  "rainfall": {
+    "data": {
+      "total": {
+        "average": "397.4",
+        "date_to": "2026-07-20",
+        "date_from": "2025-09-01"
+      },
+      "24hour": {
+        "date": "2026-07-20",
+        "average": "0.0"
+      },
+      "stations": {
+        "Luqa": {
+          "total": "430.1",
+          "total_24_hour": "0.0"
+        },
+        "Mosta": {
+          "total": "363.8",
+          "total_24_hour": "0.0"
+        },
+        "Msida": {
+          "total": "412.4",
+          "total_24_hour": "0.0"
+        },
+        "Dingli": {
+          "total": "485.5",
+          "total_24_hour": "0.0"
+        },
+        "Valletta": {
+          "total": "292.4",
+          "total_24_hour": "0.0"
+        },
+        "Beng\u0127ajsa": {
+          "total": "342.2",
+          "total_24_hour": "0.0"
+        },
+        "Xag\u0127ra (Gozo)": {
+          "total": "439.6",
+          "total_24_hour": "0.0"
+        },
+        "Xewkija (Gozo)": {
+          "total": "427.0",
+          "total_24_hour": "0.0"
+        },
+        "San Lawrenz (Gozo)": {
+          "total": "383.4",
+          "total_24_hour": "0.0"
+        }
+      }
+    },
+    "last_updated": "20th Jul 2026 23:59",
+    "last_updated_mt": "20 ta` Lul 2026 23:59"
+  }
+}

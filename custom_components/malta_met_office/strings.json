@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Malta Met Office",
+        "description": "Set up Malta Met Office weather. No account or API key is required."
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to Malta Met Office",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Malta Met Office is already configured"
+    }
+  }
+}
