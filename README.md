@@ -2,6 +2,9 @@
 
 A custom Home Assistant integration that provides a weather entity and sensors using forecast data from Malta Met Office.
 
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
+[![Validate](https://github.com/Feramance/hacs-malta-met-office/actions/workflows/validate.yml/badge.svg)](https://github.com/Feramance/hacs-malta-met-office/actions/workflows/validate.yml)
+
 ## Features
 
 - Weather entity for Malta Met Office with daily 7-day forecast
@@ -11,7 +14,7 @@ A custom Home Assistant integration that provides a weather entity and sensors u
 - Zero-config setup (no account or API key)
 - Configurable update interval after setup (default 6 hours)
 - Cloud polling via Home Assistant config flow
-- HACS-compatible installation
+- HACS-compatible installation with GitHub Releases
 
 ## Data Source
 
@@ -21,11 +24,17 @@ https://maltametoffice.com/en/forecast/
 
 ## Installation with HACS
 
+### My Home Assistant
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Feramance&repository=hacs-malta-met-office&category=integration)
+
+### Manual HACS steps
+
 1. Open HACS.
 2. Go to Integrations.
 3. Open the three-dot menu.
 4. Choose Custom repositories.
-5. Add this repository URL.
+5. Add `https://github.com/Feramance/hacs-malta-met-office`.
 6. Category: Integration.
 7. Install **Malta Met Office**.
 8. Restart Home Assistant.
@@ -59,9 +68,26 @@ Data refreshes every **6 hours** by default. To change this:
 
 The minimum allowed interval is **30 minutes**.
 
+## Versioning and releases
+
+Versions are defined in `custom_components/malta_met_office/manifest.json` and published as GitHub Releases.
+
+To cut a new release:
+
+1. Bump `"version"` in `manifest.json` (for example `0.4.0`).
+2. Commit the change.
+3. Create and push a matching tag: `git tag v0.4.0 && git push origin v0.4.0`.
+4. The `release.yml` workflow creates the GitHub Release automatically (tag must match the manifest version).
+
+HACS users who track this repository as a custom integration will see those releases for download and upgrade.
+
+Inclusion in the default HACS store requires a separate pull request to [`hacs/default`](https://github.com/hacs/default) after validation Actions pass and at least one release exists.
+
 ## Notes
 
 This integration is unofficial and is not affiliated with, endorsed by, or supported by Malta Met Office or Malta International Airport.
+
+Brand images used in Home Assistant are sourced from the public Malta Met Office website and remain the property of Malta Met Office / Malta International Airport.
 
 If the Malta Met Office website or API changes, parsing may break.
 

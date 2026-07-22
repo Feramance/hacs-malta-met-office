@@ -1,7 +1,7 @@
 {
   "domain": "malta_met_office",
   "name": "Malta Met Office",
-  "codeowners": [],
+  "codeowners": ["@Feramance"],
   "config_flow": true,
   "dependencies": [],
   "documentation": "https://github.com/Feramance/hacs-malta-met-office",
@@ -9,5 +9,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/Feramance/hacs-malta-met-office/issues",
   "requirements": [],
-  "version": "0.3.0"
+  "version": "0.4.0"
 }
