@@ -3,7 +3,7 @@
 A custom Home Assistant integration that provides a weather entity and sensors using forecast data from Malta Met Office.
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
-[![Validate](https://github.com/Feramance/hacs-malta-met-office/actions/workflows/validate.yml/badge.svg)](https://github.com/Feramance/hacs-malta-met-office/actions/workflows/validate.yml)
+[![Validate](https://github.com/Feramance/malta-met-office/actions/workflows/validate.yml/badge.svg)](https://github.com/Feramance/malta-met-office/actions/workflows/validate.yml)
 
 ## Features
 
@@ -26,7 +26,7 @@ https://maltametoffice.com/en/forecast/
 
 ### My Home Assistant
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Feramance&repository=hacs-malta-met-office&category=integration)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Feramance&repository=malta-met-office&category=integration)
 
 ### Manual HACS steps
 
@@ -34,7 +34,7 @@ https://maltametoffice.com/en/forecast/
 2. Go to Integrations.
 3. Open the three-dot menu.
 4. Choose Custom repositories.
-5. Add `https://github.com/Feramance/hacs-malta-met-office`.
+5. Add `https://github.com/Feramance/malta-met-office`.
 6. Category: Integration.
 7. Install **Malta Met Office**.
 8. Restart Home Assistant.

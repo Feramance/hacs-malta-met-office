@@ -6,10 +6,10 @@
   ],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/Feramance/hacs-malta-met-office",
+  "documentation": "https://github.com/Feramance/malta-met-office",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/Feramance/hacs-malta-met-office/issues",
+  "issue_tracker": "https://github.com/Feramance/malta-met-office/issues",
   "requirements": [],
   "version": "0.4.1"
 }
