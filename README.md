@@ -68,20 +68,7 @@ Data refreshes every **6 hours** by default. To change this:
 
 The minimum allowed interval is **30 minutes**.
 
-## Versioning and releases
-
-Versions are defined in `custom_components/malta_met_office/manifest.json` and published as GitHub Releases.
-
-To cut a new release:
-
-1. Bump `"version"` in `manifest.json` (for example `0.4.0`).
-2. Commit the change.
-3. Create and push a matching tag: `git tag v0.4.0 && git push origin v0.4.0`.
-4. The `release.yml` workflow creates the GitHub Release automatically (tag must match the manifest version).
-
-HACS users who track this repository as a custom integration will see those releases for download and upgrade.
-
-Inclusion in the default HACS store requires a separate pull request to [`hacs/default`](https://github.com/hacs/default) after validation Actions pass and at least one release exists.
+Releases are created automatically when a commit on `main` includes `[major]`, `[minor]`, or `[patch]` in the message.
 
 ## Notes
 

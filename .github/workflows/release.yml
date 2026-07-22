@@ -2,32 +2,105 @@ name: Release
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
 
 permissions:
   contents: write
 
+concurrency:
+  group: release-main
+  cancel-in-progress: false
+
 jobs:
-  release:
+  bump-and-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Verify tag matches manifest version
+      - name: Detect bump type from commit message
+        id: bump
         run: |
-          TAG="${GITHUB_REF_NAME}"
-          VERSION="${TAG#v}"
-          MANIFEST_VERSION=$(python3 -c "import json; print(json.load(open('custom_components/malta_met_office/manifest.json'))['version'])")
-          echo "Tag version: ${VERSION}"
-          echo "Manifest version: ${MANIFEST_VERSION}"
-          if [ "${VERSION}" != "${MANIFEST_VERSION}" ]; then
-            echo "Tag ${TAG} does not match manifest.json version ${MANIFEST_VERSION}"
-            exit 1
+          set -euo pipefail
+          MSG=$(git log -1 --pretty=%B)
+          echo "Commit message:"
+          echo "$MSG"
+
+          if echo "$MSG" | grep -qiE '^chore: release v'; then
+            echo "Skipping release bump commit"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          generate_release_notes: true
-          name: "${{ github.ref_name }}"
+          TYPE=""
+          if echo "$MSG" | grep -qiE '\[major\]'; then
+            TYPE="major"
+          elif echo "$MSG" | grep -qiE '\[minor\]'; then
+            TYPE="minor"
+          elif echo "$MSG" | grep -qiE '\[patch\]'; then
+            TYPE="patch"
+          fi
+
+          if [ -z "$TYPE" ]; then
+            echo "No [major]/[minor]/[patch] prefix — nothing to release"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          echo "type=$TYPE" >> "$GITHUB_OUTPUT"
+
+      - name: Bump version, tag, and release
+        if: steps.bump.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUMP_TYPE: ${{ steps.bump.outputs.type }}
+        run: |
+          set -euo pipefail
+          MANIFEST="custom_components/malta_met_office/manifest.json"
+          CURRENT=$(python3 -c "import json; print(json.load(open('$MANIFEST'))['version'])")
+          IFS=. read -r MAJOR MINOR PATCH <<< "$CURRENT"
+
+          case "$BUMP_TYPE" in
+            major)
+              MAJOR=$((MAJOR + 1)); MINOR=0; PATCH=0
+              ;;
+            minor)
+              MINOR=$((MINOR + 1)); PATCH=0
+              ;;
+            patch)
+              PATCH=$((PATCH + 1))
+              ;;
+            *)
+              echo "Unknown bump type: $BUMP_TYPE"
+              exit 1
+              ;;
+          esac
+
+          NEXT="${MAJOR}.${MINOR}.${PATCH}"
+          echo "Bumping $CURRENT -> $NEXT ($BUMP_TYPE)"
+
+          python3 -c "
+          import json
+          path = '$MANIFEST'
+          with open(path, encoding='utf-8') as f:
+              data = json.load(f)
+          data['version'] = '$NEXT'
+          with open(path, 'w', encoding='utf-8') as f:
+              json.dump(data, f, indent=2)
+              f.write('\n')
+          "
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$MANIFEST"
+          git commit -m "chore: release v${NEXT}"
+          git tag "v${NEXT}"
+          git push origin HEAD:main
+          git push origin "v${NEXT}"
+
+          gh release create "v${NEXT}" \
+            --title "v${NEXT}" \
+            --generate-notes
