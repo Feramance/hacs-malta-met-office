@@ -9,7 +9,7 @@ A custom Home Assistant integration that provides a weather entity and sensors u
 - Current conditions (temperature, humidity, pressure, wind, visibility, UV, sea temperature, and more)
 - Rainfall summaries and active weather warnings as sensors
 - Zero-config setup (no account or API key)
-- Automatic updates every 6 hours
+- Configurable update interval after setup (default 6 hours)
 - Cloud polling via Home Assistant config flow
 - HACS-compatible installation
 
@@ -32,11 +32,11 @@ https://maltametoffice.com/en/forecast/
 9. Go to **Settings → Devices & services**.
 10. Add Integration → **Malta Met Office**.
 
-No further configuration is required. The integration connects automatically.
+No further configuration is required to add the integration. It connects automatically.
 
 ## Configuration
 
-There are no user-facing setup options. After adding the integration, Home Assistant creates a **Malta Met Office** device with:
+Setup is zero-config. After adding the integration, Home Assistant creates a **Malta Met Office** device with:
 
 - `weather.malta_met_office` (current conditions + daily forecast)
 - Sensors for each observation field, including:
@@ -49,7 +49,15 @@ There are no user-facing setup options. After adding the integration, Home Assis
   - Bright sunshine hours, sunrise, sunset, moon phase
   - Condition, last updated, warning count, active warning
 
-Data is refreshed automatically every **6 hours**.
+### Update interval
+
+Data refreshes every **6 hours** by default. To change this:
+
+1. Go to **Settings → Devices & services → Malta Met Office**.
+2. Open **Configure**.
+3. Set **Update interval (minutes)**.
+
+The minimum allowed interval is **30 minutes**.
 
 ## Notes
 

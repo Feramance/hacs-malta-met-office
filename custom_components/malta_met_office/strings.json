@@ -13,5 +13,19 @@
     "abort": {
       "already_configured": "Malta Met Office is already configured"
     }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Malta Met Office options",
+        "description": "Choose how often to refresh weather data. Minimum is 30 minutes.",
+        "data": {
+          "update_interval": "Update interval (minutes)"
+        }
+      }
+    },
+    "error": {
+      "update_interval_too_low": "Update interval must be at least 30 minutes"
+    }
   }
 }

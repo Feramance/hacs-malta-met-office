@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+from datetime import timedelta
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -10,7 +11,11 @@ from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .api import async_get_weather_data
-from .const import DEFAULT_UPDATE_INTERVAL, DOMAIN
+from .const import (
+    CONF_UPDATE_INTERVAL,
+    DEFAULT_UPDATE_INTERVAL_MINUTES,
+    DOMAIN,
+)
 from .exceptions import MaltaMetOfficeError
 from .models import MaltaMetWeatherData
 
@@ -25,11 +30,15 @@ class MaltaMetOfficeCoordinator(DataUpdateCoordinator[MaltaMetWeatherData]):
         self.entry = entry
         self.session = async_get_clientsession(hass)
 
+        minutes = entry.options.get(
+            CONF_UPDATE_INTERVAL, DEFAULT_UPDATE_INTERVAL_MINUTES
+        )
+
         super().__init__(
             hass,
             _LOGGER,
             name=DOMAIN,
-            update_interval=DEFAULT_UPDATE_INTERVAL,
+            update_interval=timedelta(minutes=minutes),
         )
 
     async def _async_update_data(self) -> MaltaMetWeatherData:

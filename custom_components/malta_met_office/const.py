@@ -7,7 +7,11 @@ from datetime import timedelta
 DOMAIN = "malta_met_office"
 
 DEFAULT_NAME = "Malta Met Office"
-DEFAULT_UPDATE_INTERVAL = timedelta(hours=6)
+
+CONF_UPDATE_INTERVAL = "update_interval"
+DEFAULT_UPDATE_INTERVAL_MINUTES = 360
+MIN_UPDATE_INTERVAL_MINUTES = 30
+DEFAULT_UPDATE_INTERVAL = timedelta(minutes=DEFAULT_UPDATE_INTERVAL_MINUTES)
 
 API_BASE_URL = "https://content.maltametoffice.com"
 SITE_ORIGIN = "https://maltametoffice.com"
